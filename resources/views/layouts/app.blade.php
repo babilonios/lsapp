@@ -10,6 +10,8 @@
 
     </head>
     <body>
+        {{-- Esto va a dejar el contenido la estructura preparada
+        lo que cambia sera el content   --}}
         @yield('content')
     </body>
 </html>
