@@ -7,14 +7,21 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $title = 'Welcome to Laravel!';
+        // return view('pages.index', compact('tittle')); NOT WORKING FOR ME
+        return view('pages.index')->with('title', $title);
     }
 
     public function about(){
-        return view('pages.about');
+        $about = 'About Laravel!';
+        return view('pages.about')->with('about', $about);
     }
 
     public function services(){
-        return view('pages.services');
+        $data = array(
+            'title' => 'Services',
+            'services' => ['Web Design', 'Programing', 'SEO']
+        );
+        return view('pages.services')->with($data);
     }
 }
