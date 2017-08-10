@@ -13,4 +13,8 @@ class Post extends Model
     // Timestamps
     public $timestamps = true; // en false no habria datos de tiempo
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
 }
